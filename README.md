@@ -62,7 +62,7 @@ How to Set for Flume's Configuration
       # Set holding the Ftp-Task
       agent.sources.ftp2.pause = Y or N
       
-How to Make Multi-Thread Toploghy
+How to Make Multi-Thread Toplogy
 =======================================
 
     Ftp-Source-1 → Channel-A → Null Sink-A
