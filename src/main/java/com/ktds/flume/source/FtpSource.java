@@ -51,7 +51,7 @@ public class FtpSource extends AbstractSource implements Configurable, EventDriv
     public synchronized void start() {
         LOGGER.info(legacy + " " + "Starting Flume source ...", this.getName());
 
-        try {
+        try {  
 
             ftpTask = new UFtpTaskFactory(context).getFtpTask();
 
