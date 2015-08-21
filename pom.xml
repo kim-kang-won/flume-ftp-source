@@ -6,11 +6,8 @@
 
     <groupId>com.ktds.flume.source.ftp</groupId>
     <artifactId>flume-ftp-source</artifactId>
-    <packaging>pom</packaging>
+    <packaging>jar</packaging>
     <version>1.0-SNAPSHOT</version>
-    <modules>
-        <module>test</module>
-    </modules>
 
 
     <properties>
