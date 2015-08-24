@@ -13,6 +13,15 @@ How to Install
 
 How to Set for Flume's Configuration
 =======================================
++ FTP Connection: Supporting ftp/sftp protocol
++ Schedule: It's setting a Job-Schedule for the FTP-Task
++ Regular Exeression: Using regular expression for Filename and Path in the Ftp-Server, also It's setting today.
++ Download Directory: It's location that is downloaded directory from ftp-server
++ Move to Directory(Spool-Dir): The downloaded file have to process data at MoveToDir 
++ Duplication Check: Check that you received to download the file last time
++ Except File-List: After downloading, It could except to download next time as renaming the file of ftp-server
++ Check .FIN File: For Excepting working file in ftp-server, It can check rule of the .FIN file
++ Pause: It will stop the ftp-task, but already starting task couldn't stop
 
     1. Set FTP Connection
        agent.sources.ftp1.type = com.ktds.flume.source.FtpSource
@@ -56,25 +65,18 @@ How to Set for Flume's Configuration
       agent.sources.ftp1.remote_finished_file_postfix = .FIN or .END or .XX
       # If you want to change the postfix of remote file in ftp server after finishing download, setting below config
       agent.sources.ftp1.remote_downloaded_file_postfix = .end or .end or .xx
-      # Set remote/local file encoding
-      agent.sources.ftp1.remote_file_encoding = ascii or utf-8 ...
-      agent.sources.ftp1.local_file_encoding = ascii or utf-8 ...
       # Set holding the Ftp-Task
       agent.sources.ftp2.pause = Y or N
       
 How to Make Multi-Thread Toplogy
 =======================================
+It's consis of the multi-thread topology for using a flume configuration. the channel/sink component is a dummy object.
 
-    Ftp-Source-1 → Channel-A → Null Sink-A
-       |→ SpoolDir Source-1 → Channel-1 → HDFS Sink-1 
-        
-    Ftp-Source-2 → Channel-A → Null Sink-A
-       |→ SpoolDir Source-2 → Channel-2 → HDFS Sink-2 
-        
-    Ftp-Source-3 → Channel-A → Null Sink-A
-       |→ SpoolDir Source-3 → Channel-3 → HDFS Sink-3
-       
-       
+    ftp1 ---→
+            ↓
+    ftp2 ---→ channel → Sink
+            ↑
+    sftp3---→
        
     # Type of source for ftp sources
     # The in-time on every day : repeat_period = 24 * 60 * 60 = 86400
