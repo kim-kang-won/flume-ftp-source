@@ -14,7 +14,8 @@ How to Install
 How to Set for Flume's Configuration
 =======================================
 
-   1. Set FTP Connection
+
+    1. Set FTP Connection
        agent.sources.ftp1.type = com.ktds.flume.source.FtpSource
        agent.sources.ftp1.server = xxx.xxx.xxx.xxx
        agent.sources.ftp1.legacy = legacy alias
@@ -58,6 +59,7 @@ How to Set for Flume's Configuration
       agent.sources.ftp1.remote_downloaded_file_postfix = .end or .end or .xx
       # Set holding the Ftp-Task
       agent.sources.ftp2.pause = Y or N
+      
       
 How to Make Multi-Thread Toplogy
 =======================================
