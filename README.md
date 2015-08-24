@@ -13,6 +13,7 @@ How to Install
 
 How to Set for Flume's Configuration
 =======================================
+
 + FTP Connection: Supporting ftp/sftp protocol
 + Schedule: It's setting a Job-Schedule for the FTP-Task
 + Regular Exeression: Using regular expression for Filename and Path in the Ftp-Server, also It's setting today.
@@ -22,7 +23,6 @@ How to Set for Flume's Configuration
 + Except File-List: After downloading, It could except to download next time as renaming the file of ftp-server
 + Check .FIN File: For Excepting working file in ftp-server, It can check rule of the .FIN file
 + Pause: It will stop the ftp-task, but already starting task couldn't stop
-
 
 
     1. Set FTP Connection
