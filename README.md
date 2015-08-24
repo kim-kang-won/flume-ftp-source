@@ -22,6 +22,7 @@ How to Set for Flume's Configuration
 + Except File-List: After downloading, It could except to download next time as renaming the file of ftp-server
 + Check .FIN File: For Excepting working file in ftp-server, It can check rule of the .FIN file
 + Pause: It will stop the ftp-task, but already starting task couldn't stop
+
 =======================================
     1. Set FTP Connection
        agent.sources.ftp1.type = com.ktds.flume.source.FtpSource
